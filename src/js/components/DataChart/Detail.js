@@ -108,13 +108,13 @@ const Detail = ({
                 .map(serie => {
                   const propertyStyle = seriesStyles[serie.property];
                   return (
-                    <>
+                    <React.Fragment key={serie.property}>
                       {propertyStyle ? <Swatch {...propertyStyle} /> : <span />}
                       <Text size="small">{serie.label || serie.property}</Text>
                       <Text size="small" weight="bold">
                         {renderValue(serie, detailIndex)}
                       </Text>
-                    </>
+                    </React.Fragment>
                   );
                 })}
             </Grid>
